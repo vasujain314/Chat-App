@@ -11,20 +11,17 @@ let io=socketio(server);
 app.use(express.static(path.join(__dirname,'/../public')));
 
 io.on('connection',(socket)=>{
-    console.log("new user");
-       
-   // socket.emit('serverMessage',generateMessage('admin','Welcome to chat app'));  
 
     socket.broadcast.emit('serverMessage',generateMessage("admin","new user joined"));
-
+   
     socket.on('clientMessage',(message,callback)=>{
-        console.log("clientMessage", message);
+        // console.log("clientMessage", message);
         io.emit('serverMessage',generateMessage(message.from,message.text));
         callback("this is server");
     })
-    socket.on('disconnect',()=>{
-        console.log('user disconnected');
-    });
+    // socket.on('disconnect',()=>{
+    //     console.log('user disconnected');
+    // });
 });
 server.listen(port,()=>{
     console.log("server is up on port ${port}");
