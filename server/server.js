@@ -11,11 +11,10 @@ let io=socketio(server);
 app.use(express.static(path.join(__dirname,'/../public')));
 
 io.on('connection',(socket)=>{
-
-    socket.broadcast.emit('serverMessage',generateMessage("admin","new user joined"));
-   
+   // socket.broadcast.emit('serverMessage',generateMessage(message.from,"joined the chat"));
     socket.on('clientMessage',(message,callback)=>{
         // console.log("clientMessage", message);
+        socket.broadcast.emit('serverMessage',generateMessage(message.from,"joined the chat"));
         io.emit('serverMessage',generateMessage(message.from,message.text));
         callback("this is server");
     })
