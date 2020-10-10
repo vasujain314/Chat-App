@@ -1,16 +1,30 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="/css/style.css">
-    </head>
-    <body>
-        <h5>join chhat</h5>
-    <form action="/chat.html">
-    <input type="text" name="name" placeholder="your name">
-    <input type="text" name="room" placeholder="room name" >
-    <button id="room-btn">join</button>
-</form>
-<script type="text/javascript" src="/js/chat.js"></script>
-    </body>
-    
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat App</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <section class="login-page">
+     <form action="/chat.html">
+       <div class="box">
+           <div class="form-head">
+              <h2>Chat App</h2>
+           </div>
+           <div class="form-body">
+              <input type="text" name="name" placeholder="your name">
+            <input type="text" name="room" placeholder="room name" >
+           </div>
+           <div class="form-footer">
+              <button id="room-btn">Join</button>
+           </div>
+       </div>
+     </form>
+     <script type="text/javascript" src="/js/chat.js"></script>
+  </section>
+
+</body>
 </html>
