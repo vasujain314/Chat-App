@@ -14,6 +14,7 @@ io.on('connection',(socket)=>{
    // socket.broadcast.emit('serverMessage',generateMessage(message.from,"joined the chat"));
     socket.on('clientMessage',(message,callback)=>{
         // console.log("clientMessage", message);
+        // Sending data to client
         socket.broadcast.emit('serverMessage',generateMessage(message.from,"joined the chat"));
         io.emit('serverMessage',generateMessage(message.from,message.text));
         callback("this is server");
