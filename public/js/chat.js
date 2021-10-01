@@ -1,3 +1,4 @@
+// chat js file 
 let socket = io();
 
 function scrollToBottom(){
